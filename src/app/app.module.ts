@@ -12,6 +12,8 @@ import { NavegacionComponent } from './componentes/navegacion/navegacion.compone
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoadingComponent } from './componentes/loading/loading.component';
 import { ListaDeseosComponent } from './componentes/lista-deseos/lista-deseos.component';
+import { FiltroPipe } from './pipes/filtro.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { ListaDeseosComponent } from './componentes/lista-deseos/lista-deseos.co
     LoginComponent,
     NavegacionComponent,
     LoadingComponent,
-    ListaDeseosComponent
+    ListaDeseosComponent,
+    FiltroPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

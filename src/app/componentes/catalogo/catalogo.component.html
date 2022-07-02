@@ -1,13 +1,19 @@
 <app-navegacion></app-navegacion>
+<div class="form-group">
+
+    <input style="margin-top: 50px; " type="text" class="form-control" name="filterPost" placeholder="Buscar por número de estrellas" [(ngModel)]="filterPost">
+</div>
 <!-- Cards de productos -->
 <div ngClass="animated fadeIn" style="margin-top: 50px;" class="Productos">
-    <div *ngFor="let Prod of _servicio.InfoProd; let i=index" [attr.data-index]="i" class="card" style="width: 18rem;">
-        <img src="{{Prod.Imagen}}">
-        <h4>{{Prod.Nombre}}</h4>
-        <h5>Precio: {{Prod.Precio}}</h5>
-        <h6><i class="fa-solid fa-heart" style="margin: 0 0 15px 0;"></i> Añadir a la lista de deseos</h6>
+
+    <div *ngFor="let Prod of posts | filtro:filterPost;  let i=index;" [attr.data-index]="i" class="card" style="width: 18rem;">
+        <img class="hi" src="{{Prod.Imagen}}">
+        <h4 class="hi">{{Prod.Nombre}}</h4>
+        <h5 class="hi">Precio: {{Prod.Precio}}</h5>
+        <h6 class="hi"><i class="fa-solid fa-star"></i> Valoración: {{Prod.Valoracion}}</h6>
         <button (click)=Detalle(i) type="button" class="btn btn-warning" style="margin: 0 0 20px 0;">Detalles</button>
         <i class="fa-solid fa-cart-plus"></i>
 
     </div>
+
 </div>
